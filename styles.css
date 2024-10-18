@@ -1,0 +1,104 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --main-color: rgb(61, 139, 118);
+}
+body {
+    background-color: #eee;
+    font-family: sans-serif;
+    text-align: center;
+    height: 100vh;
+}
+
+.wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    width: clamp(350px, 50%, 500px);
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 3px 3px 5px 2px #0004;
+}
+
+.wrapper h1{
+    background-color: var(--main-color);
+    color: white;
+    font-size: 25px;
+    margin-bottom: 50px;
+    padding: 20px 0;
+
+}
+
+.wrapper input{
+    width: 80%;
+    height: 40px;
+    font-size: 20px;
+    background: none;
+    padding: 0 10px;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid #aaa;
+    margin-bottom: 30px;
+}
+
+.wrapper .result-wrapper {
+    width: 80%;
+    margin-inline: auto; 
+    display: grid;
+    grid-template-rows: 0fr;
+    border-radius: 5px;
+    background-color: rgb(from var(--main-color) r g b / 15%);
+    transition: all 500ms, margin-bottom 1s;
+}
+
+.wrapper .result-wrapper:has(.false) {
+    --main-color: rgb(168, 35, 35);
+}
+
+.wrapper .result-wrapper:has(.show){
+    padding: 10px 15px ;
+    margin-bottom: 20px;
+    grid-template-rows: 1fr;
+    border: 2px solid var(--main-color);
+    transition: all 500ms;
+}
+
+
+.wrapper .result-wrapper p{
+    line-height: 1.8;
+    color: hsl(from var(--main-color) h s 30%);
+    overflow: hidden;
+}
+
+.wrapper input:focus {
+    border-bottom-color: var(--main-color);
+}
+
+.wrapper button {
+    display: block;
+    width: 80%;
+    height: 40px;
+    background-color: var(--main-color);
+    color: white;
+    font-size: 16px ;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    margin: 0 auto 50px;
+    cursor: pointer;
+
+}
+
+.wrapper button:hover {
+    background-color: hsl(from var(--main-color) h s 45%);
+}
+
+.wrapper button:active {
+    box-shadow: 3px 3px 5px 1px #0003 inset, 
+                3px 3px 5px 1px #ffff ;
+}
